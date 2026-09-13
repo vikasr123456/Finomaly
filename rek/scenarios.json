@@ -1,0 +1,2458 @@
+[
+  {
+    "name": "normal_grocery_purchase",
+    "description": "Routine small grocery payment exactly matching history behaviour.",
+    "expectedDecisionHint": "ALLOW / MONITOR",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-01",
+      "amount": 1150.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T10:30:00+05:30",
+      "merchant": "Grocery Bazaar",
+      "beneficiaryId": "BEN-KIRANA",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-05",
+        "amount": 1324.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T15:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-06",
+        "amount": 1555.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T09:25:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-07",
+        "amount": 1786.0,
+        "currency": "INR",
+        "timestamp": "2026-09-07T13:42:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-08",
+        "amount": 2017.0,
+        "currency": "INR",
+        "timestamp": "2026-09-08T17:59:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-09",
+        "amount": 2248.0,
+        "currency": "INR",
+        "timestamp": "2026-09-09T11:16:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-10",
+        "amount": 2479.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T15:33:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-11",
+        "amount": 2710.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T09:50:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-12",
+        "amount": 2941.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T13:07:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-13",
+        "amount": 3172.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T17:24:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-14",
+        "amount": 3403.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T11:41:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-15",
+        "amount": 3634.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T15:58:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-16",
+        "amount": 3865.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T09:15:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "unusual_amount_transfer",
+    "description": "Lump-sum IMPS transfer ~140x the customer's normal average to a brand-new beneficiary.",
+    "expectedDecisionHint": "REVIEW / FRAUD",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-02",
+      "amount": 300000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T13:45:00+05:30",
+      "merchant": "IMPS Transfer",
+      "beneficiaryId": "BEN-THERAPY-NEW",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-05",
+        "amount": 1324.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T15:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-06",
+        "amount": 1555.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T09:25:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-07",
+        "amount": 1786.0,
+        "currency": "INR",
+        "timestamp": "2026-09-07T13:42:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-08",
+        "amount": 2017.0,
+        "currency": "INR",
+        "timestamp": "2026-09-08T17:59:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-09",
+        "amount": 2248.0,
+        "currency": "INR",
+        "timestamp": "2026-09-09T11:16:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-10",
+        "amount": 2479.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T15:33:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-11",
+        "amount": 2710.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T09:50:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-12",
+        "amount": 2941.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T13:07:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-13",
+        "amount": 3172.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T17:24:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-14",
+        "amount": 3403.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T11:41:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-15",
+        "amount": 3634.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T15:58:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-16",
+        "amount": 3865.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T09:15:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "round_number_structuring",
+    "description": "Three exact \u20b950,000 transfers below reportable thresholds (structuring) to the same beneficiary.",
+    "expectedDecisionHint": "MONITOR / REVIEW",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-03",
+      "amount": 50000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T16:10:00+05:30",
+      "merchant": "City Rent",
+      "beneficiaryId": "BEN-RENT2",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-05",
+        "amount": 1324.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T15:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-06",
+        "amount": 1555.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T09:25:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-07",
+        "amount": 1786.0,
+        "currency": "INR",
+        "timestamp": "2026-09-07T13:42:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-08",
+        "amount": 2017.0,
+        "currency": "INR",
+        "timestamp": "2026-09-08T17:59:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-09",
+        "amount": 2248.0,
+        "currency": "INR",
+        "timestamp": "2026-09-09T11:16:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-10",
+        "amount": 2479.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T15:33:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-11",
+        "amount": 2710.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T09:50:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-12",
+        "amount": 2941.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T13:07:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-13",
+        "amount": 3172.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T17:24:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-03A",
+        "amount": 50000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T16:05:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT2",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-03B",
+        "amount": 50000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T16:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT2",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "rapid_money_movement",
+    "description": "\u20b99,00,000 credit lands; \u20b97,50,000 moves out to a fresh beneficiary ~8 minutes later.",
+    "expectedDecisionHint": "REVIEW / FRAUD",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-04",
+      "amount": 750000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T18:00:00+05:30",
+      "merchant": "PayFriend",
+      "beneficiaryId": "BEN-LAYERING-NEW",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "NET_BANKING",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "SCN-04A",
+        "amount": 900000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T17:52:00+05:30",
+        "merchant": "Property Refund",
+        "beneficiaryId": "BEN-REFUND-SRC",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "NET_BANKING",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-04B",
+        "amount": 600.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T09:12:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "velocity_burst",
+    "description": "16 purchases in 30 minutes (12 within 5 minutes) \u2014 far above the customer's cadence.",
+    "expectedDecisionHint": "MONITOR / REVIEW",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-05",
+      "amount": 4200.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T18:32:00+05:30",
+      "merchant": "Metro Electronics",
+      "beneficiaryId": "BEN-ELECTRO",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0500",
+        "amount": 300.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:00:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0501",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:02:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0502",
+        "amount": 500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:04:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0503",
+        "amount": 600.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:06:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0504",
+        "amount": 700.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:08:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0505",
+        "amount": 300.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:10:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0506",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:12:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0507",
+        "amount": 500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:14:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0508",
+        "amount": 600.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:16:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0509",
+        "amount": 700.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:18:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0510",
+        "amount": 300.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:20:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0511",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:22:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0512",
+        "amount": 500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:24:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0513",
+        "amount": 600.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:26:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0514",
+        "amount": 700.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:28:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-0515",
+        "amount": 300.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T18:30:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "new_device_night_transfer",
+    "description": "Large transfer at 02:30 UTC (~08:00 IST) from a brand-new device, new device + new beneficiary + amount anomaly.",
+    "expectedDecisionHint": "REVIEW / FRAUD",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-06",
+      "amount": 150000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-15T02:30:00+00:00",
+      "merchant": "IMPS Transfer",
+      "beneficiaryId": "BEN-NIGHT-NEW",
+      "deviceId": "DEV-EMU-2026",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "SCN-06B0",
+        "amount": 300.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T19:30:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-06B1",
+        "amount": 550.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T19:30:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-06B2",
+        "amount": 800.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T19:30:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-06B3",
+        "amount": 1050.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T19:30:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-06B4",
+        "amount": 1300.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T19:30:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "location_anomaly",
+    "description": "Same device/beneficiary but 1,740 km away in Delhi the same day.",
+    "expectedDecisionHint": "MONITOR / REVIEW",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-07",
+      "amount": 4200.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T14:00:00+05:30",
+      "merchant": "Grocery Bazaar",
+      "beneficiaryId": "BEN-KIRANA",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 28.6139,
+        "longitude": 77.209
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-05",
+        "amount": 1324.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T15:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-06",
+        "amount": 1555.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T09:25:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-07",
+        "amount": 1786.0,
+        "currency": "INR",
+        "timestamp": "2026-09-07T13:42:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-08",
+        "amount": 2017.0,
+        "currency": "INR",
+        "timestamp": "2026-09-08T17:59:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-09",
+        "amount": 2248.0,
+        "currency": "INR",
+        "timestamp": "2026-09-09T11:16:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-10",
+        "amount": 2479.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T15:33:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-11",
+        "amount": 2710.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T09:50:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-12",
+        "amount": 2941.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T13:07:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-13",
+        "amount": 3172.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T17:24:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-14",
+        "amount": 3403.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T11:41:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-15",
+        "amount": 3634.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T15:58:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-16",
+        "amount": 3865.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T09:15:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "amount_progression",
+    "description": "History shows 1k\u21922k\u21924k\u21928k creep, then a sudden \u20b95,00,000 jump (fraud escalation pattern).",
+    "expectedDecisionHint": "REVIEW / FRAUD",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-08",
+      "amount": 500000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T12:05:00+05:30",
+      "merchant": "Metro Electronics",
+      "beneficiaryId": "BEN-ELECTRO",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-08A0",
+        "amount": 1000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T12:00:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-08A1",
+        "amount": 2000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T12:00:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-08A2",
+        "amount": 4000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T12:00:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-08A3",
+        "amount": 8000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T12:00:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "beneficiary_concentration",
+    "description": "75% of funds flow to one landlord beneficiary; money now routed somewhere new.",
+    "expectedDecisionHint": "MONITOR / REVIEW",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-09",
+      "amount": 6000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T11:20:00+05:30",
+      "merchant": "Transfer",
+      "beneficiaryId": "BEN-NEW-REDIRECT",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "SCN-09A00",
+        "amount": 1000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A01",
+        "amount": 1500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A02",
+        "amount": 2000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A03",
+        "amount": 2500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A04",
+        "amount": 1000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A05",
+        "amount": 1500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A06",
+        "amount": 2000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-07T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A07",
+        "amount": 2500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-08T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A08",
+        "amount": 1000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-09T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A09",
+        "amount": 1500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A10",
+        "amount": 2000.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-09A11",
+        "amount": 2500.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T11:00:00+05:30",
+        "merchant": "Property Mgmt",
+        "beneficiaryId": "BEN-LANDLORD",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "name": "failed_pattern",
+    "description": "Three declined \u20b959,999 attempts immediately followed by a successful one \u2014 card testing.",
+    "expectedDecisionHint": "MONITOR / REVIEW",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-10",
+      "amount": 59999.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T09:22:00+05:30",
+      "merchant": "Electronics",
+      "beneficiaryId": "BEN-VENDOR",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-05",
+        "amount": 1324.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T15:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-06",
+        "amount": 1555.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T09:25:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "SCN-10F0",
+        "amount": 59999.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T09:10:00+05:30",
+        "merchant": "Electronics",
+        "beneficiaryId": "BEN-VENDOR",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "DECLINED"
+      },
+      {
+        "id": "SCN-10F1",
+        "amount": 59999.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T09:13:00+05:30",
+        "merchant": "Electronics",
+        "beneficiaryId": "BEN-VENDOR",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "DECLINED"
+      },
+      {
+        "id": "SCN-10F2",
+        "amount": 59999.0,
+        "currency": "INR",
+        "timestamp": "2026-09-14T09:16:00+05:30",
+        "merchant": "Electronics",
+        "beneficiaryId": "BEN-VENDOR",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "DECLINED"
+      }
+    ]
+  },
+  {
+    "name": "new_customer_first_transaction",
+    "description": "Customer with zero history makes a small first payment \u2014 only mild identity rules can fire.",
+    "expectedDecisionHint": "ALLOW",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-11",
+      "amount": 1500.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T10:15:00+05:30",
+      "merchant": "Grocery Bazaar",
+      "beneficiaryId": "BEN-KIRANA",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": []
+  },
+  {
+    "name": "behavioral_change",
+    "description": "Everything differs at once: new device, new merchant, new beneficiary, big amount, different hour.",
+    "expectedDecisionHint": "REVIEW / FRAUD",
+    "customer": {
+      "id": "USER-1001",
+      "accountAgeDays": 1240
+    },
+    "currentTransaction": {
+      "id": "SCN-12",
+      "amount": 95000.0,
+      "currency": "INR",
+      "timestamp": "2026-09-15T03:10:00+00:00",
+      "merchant": "Gold Trading Co",
+      "beneficiaryId": "BEN-GOLD-NEW",
+      "deviceId": "DEV-GALAXY-88",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    "history": [
+      {
+        "id": "BASE-01",
+        "amount": 400.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T09:00:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-02",
+        "amount": 631.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T13:17:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-03",
+        "amount": 862.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T17:34:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-04",
+        "amount": 1093.0,
+        "currency": "INR",
+        "timestamp": "2026-09-04T11:51:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-05",
+        "amount": 1324.0,
+        "currency": "INR",
+        "timestamp": "2026-09-05T15:08:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-06",
+        "amount": 1555.0,
+        "currency": "INR",
+        "timestamp": "2026-09-06T09:25:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-07",
+        "amount": 1786.0,
+        "currency": "INR",
+        "timestamp": "2026-09-07T13:42:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-08",
+        "amount": 2017.0,
+        "currency": "INR",
+        "timestamp": "2026-09-08T17:59:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-09",
+        "amount": 2248.0,
+        "currency": "INR",
+        "timestamp": "2026-09-09T11:16:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-10",
+        "amount": 2479.0,
+        "currency": "INR",
+        "timestamp": "2026-09-10T15:33:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-11",
+        "amount": 2710.0,
+        "currency": "INR",
+        "timestamp": "2026-09-11T09:50:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-12",
+        "amount": 2941.0,
+        "currency": "INR",
+        "timestamp": "2026-09-12T13:07:00+05:30",
+        "merchant": "Metro Electronics",
+        "beneficiaryId": "BEN-ELECTRO",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-13",
+        "amount": 3172.0,
+        "currency": "INR",
+        "timestamp": "2026-09-13T17:24:00+05:30",
+        "merchant": "Pharmacy 24x7",
+        "beneficiaryId": "BEN-PHARMA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-14",
+        "amount": 3403.0,
+        "currency": "INR",
+        "timestamp": "2026-09-01T11:41:00+05:30",
+        "merchant": "Fuel Station",
+        "beneficiaryId": "BEN-FUEL",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-15",
+        "amount": 3634.0,
+        "currency": "INR",
+        "timestamp": "2026-09-02T15:58:00+05:30",
+        "merchant": "City Rent",
+        "beneficiaryId": "BEN-RENT",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      },
+      {
+        "id": "BASE-16",
+        "amount": 3865.0,
+        "currency": "INR",
+        "timestamp": "2026-09-03T09:15:00+05:30",
+        "merchant": "Grocery Bazaar",
+        "beneficiaryId": "BEN-KIRANA",
+        "deviceId": "DEV-HOME-ANDROID",
+        "location": {
+          "latitude": 12.9716,
+          "longitude": 77.5946
+        },
+        "channel": "UPI",
+        "status": "SUCCESS"
+      }
+    ]
+  }
+]

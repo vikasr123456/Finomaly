@@ -1,0 +1,98 @@
+{
+  "customer": {
+    "id": "USER-1001",
+    "accountAgeDays": 1240
+  },
+  "currentTransaction": {
+    "id": "TXN-HOPSCOTCH-001",
+    "amount": 985000.0,
+    "currency": "INR",
+    "timestamp": "2026-09-14T22:48:30+05:30",
+    "merchant": "Elite Gold Trading",
+    "beneficiaryId": "BEN-NEW-777",
+    "deviceId": "DEV-EMU-88",
+    "location": {
+      "latitude": 6.927,
+      "longitude": 79.861
+    },
+    "channel": "UPI",
+    "status": "SUCCESS"
+  },
+  "history": [
+    {
+      "id": "H1",
+      "amount": 1200.0,
+      "currency": "INR",
+      "timestamp": "2026-09-14T10:15:00+05:30",
+      "merchant": "Grocery Bazaar",
+      "beneficiaryId": "BEN-KIRANA",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "H2",
+      "amount": 2410.0,
+      "currency": "INR",
+      "timestamp": "2026-09-13T09:20:00+05:30",
+      "merchant": "Metro Electronics",
+      "beneficiaryId": "BEN-ELECTRO",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "H3",
+      "amount": 900.0,
+      "currency": "INR",
+      "timestamp": "2026-09-12T11:45:00+05:30",
+      "merchant": "Pharmacy 24x7",
+      "beneficiaryId": "BEN-PHARMA",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "H4",
+      "amount": 3400.0,
+      "currency": "INR",
+      "timestamp": "2026-09-11T13:10:00+05:30",
+      "merchant": "City Rent",
+      "beneficiaryId": "BEN-RENT",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "H5",
+      "amount": 1500.0,
+      "currency": "INR",
+      "timestamp": "2026-09-10T17:00:00+05:30",
+      "merchant": "Grocery Bazaar",
+      "beneficiaryId": "BEN-KIRANA",
+      "deviceId": "DEV-HOME-ANDROID",
+      "location": {
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "channel": "UPI",
+      "status": "SUCCESS"
+    }
+  ]
+}
