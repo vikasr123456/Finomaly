@@ -191,7 +191,89 @@ docker compose -f deploy/docker-compose.yml --env-file deploy/.env down
 
 ---
 
-## 4. Load data and smoke-test
+## 4. Deploy to Railway
+
+[Railway](https://railway.com) runs this stack as **two services from one
+image**: the scoring API and the dashboard BFF. The repo already contains the
+Railway wiring; no local behavior changes:
+
+* `railway.json` (repo root) — tells Railway to build `deploy/Dockerfile`,
+  gives it a start command that listens on Railway's injected `PORT`, and
+  enables `/health`-based checks with restart-on-failure. Both services stay
+  at `numReplicas: 1` on purpose (SQLite single-writer design).
+* `deploy/Dockerfile` — the image CMD now listens on `${PORT:-8000}` and picks
+  the service via `${APP_MODULE:-fraud_demo:app}`, so the same image serves as
+  either the API or the dashboard without a rebuild.
+* `deploy/railway.env.example` — the per-service variables, documented.
+
+### 1. Push to GitHub and create the project
+
+Push this repository to GitHub, then in Railway: **New Project → Deploy from
+GitHub repo** and select it. Railway reads `railway.json` and builds
+`deploy/Dockerfile`. (If you deploy only a subdirectory, or Railway skips the
+config file, set the service variable `RAILWAY_DOCKERFILE_PATH=deploy/Dockerfile`.)
+
+### 2. Create the two services
+
+The first service this repo deploys is the scoring API — **name it `api`**.
+Add a second service from the **same repo** (`+ New → GitHub Repo` again) and
+**name it `dashboard`**. The names matter: over Railway private networking the
+dashboard reaches the API at `api.railway.internal`.
+
+For the `dashboard` service only, set a custom start command (Settings →
+Deploy):
+
+```bash
+python -m uvicorn dashboard:app --host 0.0.0.0 --port ${PORT:-8001} --workers 1
+```
+
+(or, if it inherits the shared `railway.json` command, just set the variable
+`APP_MODULE=dashboard:app` instead — both produce the same process).
+
+For the `api` service:
+
+* Attach a **Volume** mounted at `/srv/data` (the image's `DEMO_DB_PATH`
+  default) so the SQLite file survives restarts. Railway mounts volumes as
+  root while this image runs as a non-root user, so also set the variable
+  `RAILWAY_RUN_UID=0` on the api service. Skipping the volume also works for a
+  demo — data then resets on every redeploy.
+* Keep scaling at **1 replica** for both services (Settings → Scale): the
+  prototype keeps cross-request state in one SQLite file guarded by an
+  in-process lock, and the workflow engine assumes a single writer.
+
+### 3. Set the variables
+
+Set these per service (generate the two tokens as distinct random values:
+`python -c "import secrets; print(secrets.token_urlsafe(32))"`; full
+explanations in `deploy/railway.env.example`):
+
+| Service | Variables |
+| --- | --- |
+| `api` | `PORT=8000`, `DEMO_API_TOKEN=<random>`, `QWEN_MODE=mock` |
+| `dashboard` | `PORT=8001`, `APP_MODULE=dashboard:app` (if no custom start command), `DEMO_API_TOKEN=<same value>`, `DASHBOARD_TOKEN=<different random>`, `FRAUD_API_BASE_URL=http://api.railway.internal:8000`, `FRAUD_API_ALLOW_PRIVATE_HTTP=1`, `DASHBOARD_SECURE_COOKIES=1` |
+
+`QWEN_MODE=mock` is demo-safe and provider-cost-free; for live Qwen calls also
+set `DASHSCOPE_API_KEY`, `QWEN_BASE_URL`, and `QWEN_MODEL` (region rules in
+`deploy/.env.example`). Railway redeploys on every variable change — wait for
+both services to show a healthy deployment before continuing.
+
+### 4. Expose the dashboard
+
+On the **dashboard** service: Settings → Networking → Public Networking →
+**Generate Domain** (target port 8001). Open the `.railway.app` URL and sign
+in with `DASHBOARD_TOKEN` — the session cookie is already marked Secure.
+
+Leave the **api** service without a public domain; the dashboard reaches it
+privately (`http://api.railway.internal:8000`, Wireguard-encrypted, so plain
+`http://` is correct there — `FRAUD_API_ALLOW_PRIVATE_HTTP=1` is the required
+opt-in for a private non-loopback backend, by design). Generate a domain for
+the api service only if you want to stream/ingest with `curl` or
+`scripts/smoke.py` from your machine; every scoring endpoint requires
+`X-API-Key: $DEMO_API_TOKEN` regardless.
+
+---
+
+## 5. Load data and smoke-test
 
 ### Upload your own transactions (CSV / Excel)
 
@@ -256,7 +338,7 @@ DEMO_API_TOKEN='<service token>' DASHBOARD_TOKEN='<dashboard token>' \
 
 ---
 
-## 5. Using the console
+## 6. Using the console
 
 At **http://127.0.0.1:8001**, after signing in with the dashboard token
 (browser session is a derived cookie, HttpOnly + SameSite=Strict, 8-hour
@@ -355,7 +437,7 @@ strict positive integer ≤ 10<sup>12</sup>; `country` is `[A-Z]{2}`;
 
 ---
 
-## 6. Configuration reference
+## 7. Configuration reference
 
 All variables live in `deploy/.env.example`. Required values are the two tokens.
 
@@ -380,7 +462,7 @@ the affected service return 503/401 until fixed.
 
 ---
 
-## 7. Troubleshooting
+## 8. Troubleshooting
 
 **"Submission failed: conflict" in the console / HTTP 409.**
 The `transaction_id` already exists with a **different payload**. Same ID +
@@ -441,7 +523,7 @@ attempting any hosted-orchestration wiring.
 
 ---
 
-## 8. Testing and CI
+## 9. Testing and CI
 
 * Offline suite: `python -m unittest discover -s app -p "test_*.py"` — 105
   tests across the core API, the platform modules, the BFF (real uvicorn over
@@ -460,7 +542,7 @@ attempting any hosted-orchestration wiring.
   free-text fields, minimized Qwen payload, no consequential actions, and
   alerts that survive a missing explanation.
 
-## 9. Scope and limitations
+## 10. Scope and limitations
 
 * SQLite, single worker, in-process lock: the workflow engine is durable within
   this one process (steps persist and resume on restart) but is not a

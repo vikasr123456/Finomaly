@@ -46,7 +46,11 @@ USER appuser
 ENV DEMO_DB_PATH=/srv/data/fraud_demo.sqlite3 \
     QWEN_MODE=mock \
     PORT=8000
-EXPOSE 8000
+# Both ports are declared so PaaS platforms (e.g. Railway) can route either
+# entrypoint from this one image: the api service runs fraud_demo:app on
+# $PORT (8000 by default), the dashboard service sets APP_MODULE=dashboard:app
+# with PORT=8001 — no image rebuild needed for either choice.
+EXPOSE 8000 8001
 
 # Liveness probe. /health returns no data and requires no credential.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=25s --retries=3 \
@@ -58,4 +62,10 @@ sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:'+os.environ.get('PORT','
 # time. Multiple workers would duplicate the model in memory and break the
 # single-writer assumption. Scale by sharding tenants across instances, or move
 # to PostgreSQL plus a durable workflow engine before adding workers.
-CMD ["python", "-m", "uvicorn", "fraud_demo:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+#
+# Shell form (a single simple command, so the shell exec's python and signals
+# are delivered) with two overridable knobs for PaaS deploys: platforms like
+# Railway inject PORT at runtime and expect the process to listen on it, and
+# APP_MODULE selects which service (api: fraud_demo:app, dashboard:
+# dashboard:app) runs from this one image.
+CMD python -m uvicorn "${APP_MODULE:-fraud_demo:app}" --host 0.0.0.0 --port "${PORT:-8000}" --workers 1
