@@ -1,0 +1,15 @@
+# Direct dependencies, pinned to the versions this prototype was tested against.
+# Tested on CPython 3.12.12. Python 3.11+ required.
+# Full transitive closure: requirements.lock.txt
+#
+# Note: no scikit-learn. The Isolation Forest is implemented in fraud_demo.py
+# on numpy only, so the stack runs on hosts where sklearn's compiled wheels
+# are unavailable; the scoring contract is documented alongside the model.
+numpy==2.5.3
+fastapi==0.141.1
+starlette==1.6.0
+uvicorn==0.52.4
+httpx==0.28.1
+pydantic==2.13.5
+openpyxl==3.1.5
+python-multipart==0.0.20
