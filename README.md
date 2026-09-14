@@ -13,7 +13,7 @@ guarantees), and no LLM output is ever an instruction to move money.
 
 ## Architecture Diagram 
 
-![Architecture diagram](./architecture.jpg)
+![Architecture diagram](./architecture.png)
 
 
 
