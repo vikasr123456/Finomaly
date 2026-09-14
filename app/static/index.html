@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial Intelligence — Analyst Console (Synthetic Demo)</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div id="banner" role="note">
+  SYNTHETIC DEMO — every record here is generated or uploaded test data. An anomaly
+  score is a measure of unusualness, not a probability of fraud; forecasts are
+  estimates; assistant output is decision support. Nothing here is a finding of
+  fraud, and no money moves from this console.
+</div>
+
+<section id="login" hidden aria-label="Sign in">
+  <h1>Analyst Console</h1>
+  <p class="muted">Enter the dashboard token. This credential authenticates you to the
+     console only; the scoring-service credential never reaches your browser.</p>
+  <label for="token">Dashboard token</label>
+  <input id="token" type="password" autocomplete="off" spellcheck="false" minlength="8">
+  <button id="signin" type="button">Sign in</button>
+  <p id="login-error" class="error" role="alert" hidden></p>
+</section>
+
+<main id="console" hidden>
+  <header>
+    <div>
+      <h1>Financial Intelligence Console</h1>
+      <p id="meta" class="muted"></p>
+    </div>
+    <div class="controls">
+      <label class="muted"><input id="poll" type="checkbox" checked> Auto-refresh (10s)</label>
+      <button id="refresh" type="button">Refresh</button>
+      <button id="signout" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <nav id="tabs" aria-label="Console sections">
+    <button type="button" data-tab="overview" class="active">Overview</button>
+    <button type="button" data-tab="alerts">Alerts</button>
+    <button type="button" data-tab="forecast">Forecast</button>
+    <button type="button" data-tab="invoices">Invoices / AP</button>
+    <button type="button" data-tab="expenses">Expenses</button>
+    <button type="button" data-tab="assistant">Assistant</button>
+  </nav>
+
+  <!-- ======================= Overview ======================= -->
+  <section id="tab-overview" class="tab" aria-label="Overview">
+    <section id="cards" aria-label="Summary"></section>
+
+    <section aria-label="Cash flow projection">
+      <h2>Projected net cash (USD cents, seasonal + trend, 80% band)</h2>
+      <div id="forecast-chart"></div>
+      <p id="forecast-empty" class="muted" hidden>
+        No forecast yet: ingest at least 14 days of transactions (CSV upload or the stream simulator).</p>
+    </section>
+
+    <section aria-label="Data ingest">
+      <h2>Ingest data</h2>
+      <p class="muted">CSV or Excel with columns:
+        <code>transaction_id, account_id, event_time, amount_minor, currency, country, device_id</code>
+        (direction optional). Headers can differ — set a mapping below.</p>
+      <div class="upload-row">
+        <input id="upload-file" type="file" accept=".csv,.xlsx">
+        <input id="upload-map" type="text" placeholder='column map JSON, e.g. {"Amount":"amount_minor"}' size="42">
+        <button id="upload" type="button">Upload &amp; score</button>
+      </div>
+      <pre id="upload-result" class="result" hidden></pre>
+    </section>
+  </section>
+
+  <!-- ======================= Alerts ======================= -->
+  <section id="tab-alerts" class="tab" hidden aria-label="Alert queue">
+    <section aria-label="Anomaly timeline">
+      <h2>Timeline — event time vs. anomaly score (bubble size = amount)</h2>
+      <p class="muted">Points above the dashed line exceeded the calibrated threshold.
+         Baselines are per-account and adaptive; cold-start accounts are labeled as such.</p>
+      <div id="chart"></div>
+      <p id="chart-empty" class="muted" hidden>No flagged transactions yet. Run the stream simulator or upload data.</p>
+    </section>
+
+    <section aria-label="Alert queue">
+      <h2>Alert queue</h2>
+      <table id="alerts">
+        <thead>
+          <tr>
+            <th><button type="button" data-sort="created_at">Ingested</button></th>
+            <th><button type="button" data-sort="event_time">Event time (UTC)</button></th>
+            <th><button type="button" data-sort="amount_minor">Amount</button></th>
+            <th><button type="button" data-sort="anomaly_score">Anomaly score</button></th>
+            <th><button type="button" data-sort="baseline_source">Baseline</button></th>
+            <th><button type="button" data-sort="trigger">Trigger</button></th>
+            <th><button type="button" data-sort="status">Status</button></th>
+            <th><button type="button" data-sort="recommended_action">Recommended</button></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </section>
+
+  <!-- ======================= Forecast ======================= -->
+  <section id="tab-forecast" class="tab" hidden aria-label="Cash flow forecast">
+    <section aria-label="Forecast detail">
+      <h2>Cash-flow forecast</h2>
+      <div class="controls">
+        <label class="muted">Horizon (days)
+          <input id="horizon" type="number" min="1" max="90" value="30" class="num-input">
+        </label>
+        <button id="load-forecast" type="button">Reload</button>
+      </div>
+      <div id="forecast-chart-large"></div>
+      <div id="forecast-detail"></div>
+    </section>
+  </section>
+
+  <!-- ======================= Invoices ======================= -->
+  <section id="tab-invoices" class="tab" hidden aria-label="Invoices and accounts payable">
+    <section aria-label="Invoice list">
+      <h2>Invoices / Accounts Payable</h2>
+      <p class="muted">Duplicate, arithmetic and vendor-anomaly checks run at ingest;
+         payment risk cross-checks the forecast. All decision support — nothing is paid or blocked here.</p>
+      <table id="invoices-table">
+        <thead>
+          <tr><th>Invoice</th><th>Vendor</th><th>Due</th><th>Amount</th><th>Status</th><th>Risks</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="invoices-empty" class="muted" hidden>No invoices stored yet.</p>
+    </section>
+  </section>
+
+  <!-- ======================= Expenses ======================= -->
+  <section id="tab-expenses" class="tab" hidden aria-label="Expense approvals">
+    <section aria-label="Expense list">
+      <h2>Expense approvals (durable workflow)</h2>
+      <p class="muted">Policy thresholds live in server settings; every request shows its
+         durable step trace. The workflow approves nothing consequential: a human pays.</p>
+      <table id="expenses-table">
+        <thead>
+          <tr><th>Expense</th><th>Employee</th><th>Category</th><th>Amount</th><th>Status</th><th>Reason</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="expenses-empty" class="muted" hidden>No expense requests yet.</p>
+    </section>
+  </section>
+
+  <!-- ======================= Assistant ======================= -->
+  <section id="tab-assistant" class="tab" hidden aria-label="Qwen decision assistant">
+    <section aria-label="Assistant">
+      <h2>Financial decision assistant</h2>
+      <p class="muted">Answers are computed from stored aggregates only (mock mode:
+         deterministic, provider-free). Recommendations are decision support; humans decide.</p>
+      <div class="upload-row">
+        <input id="question" type="text" size="60" maxlength="500"
+               placeholder="e.g. What is our cash flow forecast? Any duplicate invoices?">
+        <button id="ask" type="button">Ask</button>
+      </div>
+      <div id="assistant-out" hidden></div>
+    </section>
+  </section>
+</main>
+
+<aside id="drawer" hidden aria-label="Transaction detail">
+  <div class="drawer-head">
+    <h2 id="drawer-title">Detail</h2>
+    <button id="close-drawer" type="button" aria-label="Close">Close</button>
+  </div>
+  <div id="drawer-body"></div>
+</aside>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

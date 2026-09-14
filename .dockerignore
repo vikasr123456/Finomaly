@@ -1,0 +1,24 @@
+# Never ship local state, secrets, or caches into the image.
+# NOTE: this file must sit at the BUILD CONTEXT ROOT (repo root), which is the
+# only place Docker honours it — not next to the Dockerfile in deploy/.
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/*.sqlite3
+**/*.sqlite3-journal
+**/*.db
+**/.env
+**/.env.*
+!**/.env.example
+**/.git/
+**/.gitignore
+**/.venv/
+**/venv/
+**/node_modules/
+**/*.log
+**/.DS_Store
+# Local run artifacts produced by scripts/run_local.sh
+.env.local
+run/

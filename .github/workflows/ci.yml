@@ -1,0 +1,109 @@
+# Offline verification gate. No network services, no secrets, no provider calls:
+# QWEN_MODE=mock keeps every assessment a labeled synthetic fixture.
+#
+# Runtime is a few seconds plus dependency install. If this is red, do not demo.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    env:
+      QWEN_MODE: mock
+      # Deliberately obvious non-secrets. Both services fail closed on empty or
+      # "<placeholder>" values, so CI must set something valid-looking.
+      DEMO_API_TOKEN: ci-only-not-a-secret
+      DASHBOARD_TOKEN: ci-only-not-a-secret
+      DEMO_DB_PATH: /tmp/ci-fraud.sqlite3
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: deploy/requirements.lock.txt
+
+      - name: Install pinned dependencies
+        run: python -m pip install -r deploy/requirements.lock.txt
+
+      - name: Run offline test suite
+        working-directory: app
+        run: python -m unittest discover -s . -p "test_*.py" -v
+
+      - name: Verify the EnterPro module is inert pseudocode
+        working-directory: app
+        run: |
+          python - <<'PY'
+          import inspect
+          import enterpro_workflow_pseudocode as m
+          # Call each conceptual primitive with its real arity, so the assertion
+          # tests "raises NotImplementedError" and not "raises TypeError".
+          for name in ("http_action", "durable_step", "notify_once", "secure_case_url"):
+              fn = getattr(m, name)
+              required = [p for p in inspect.signature(fn).parameters.values()
+                          if p.default is inspect.Parameter.empty
+                          and p.kind in (p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD)]
+              try:
+                  fn(*["stub"] * len(required))
+              except NotImplementedError:
+                  continue
+              raise SystemExit(f"{name} must raise NotImplementedError: it is pseudocode")
+          assert inspect.iscoroutinefunction(m.on_transaction), "on_transaction must stay async"
+          print("OK: EnterPro module still raises NotImplementedError (not silently 'working')")
+          PY
+
+      - name: Verify the expense agent drives the real local workflow engine
+        working-directory: app
+        run: |
+          python - <<'PY'
+          import enterpro_local  # must import and expose the durable engine
+          assert hasattr(enterpro_local, "WorkflowEngine"), "engine must be real"
+          src = open("expenses.py", encoding="utf-8").read()
+          assert "enterpro_local" in src, "expense agent must use enterpro_local"
+          assert "enterpro_workflow_pseudocode" not in src, "pseudocode must stay out of the runtime path"
+          print("OK: expense agent runs durable steps through enterpro_local")
+          PY
+
+      - name: Validate front-end JavaScript syntax
+        run: node --check app/static/app.js
+
+      - name: Validate compose YAML and anchor merging
+        run: |
+          python -m pip install pyyaml
+          python - <<'PY'
+          import yaml
+          with open("deploy/docker-compose.yml") as fh:
+              doc = yaml.safe_load(fh)
+          api, dash = doc["services"]["api"], doc["services"]["dashboard"]
+          assert api["image"] == dash["image"], "both services must share one image"
+          assert api["build"]["dockerfile"] == "deploy/Dockerfile"
+          for svc in (api, dash):
+              assert svc["read_only"] is True, "root filesystem must be read-only"
+              assert all(p.startswith("127.0.0.1:") for p in svc["ports"]), "loopback only"
+              assert "no-new-privileges:true" in svc["security_opt"]
+          print("OK: compose structure and hardening assertions passed")
+          PY
+
+      - name: Confirm no secret values are committed
+        run: |
+          if git grep -nE "(sk-[A-Za-z0-9]{16,}|DASHSCOPE_API_KEY=[^ <$])" -- . ; then
+            echo "Possible secret committed"; exit 1
+          fi
+          echo "OK: no obvious secret literals tracked"
