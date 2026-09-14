@@ -10,6 +10,13 @@ an anomaly score measures unusualness against an account's own history, it is
 **not** a probability of fraud, forecasts are estimates of cash movement (never
 guarantees), and no LLM output is ever an instruction to move money.
 
+
+## Architecture Diagram 
+
+![Architecture diagram](./architecture.jpg)
+
+
+
 Design highlights:
 
 * **Two processes, two credentials.** A scoring API ingests, scores, and serves
